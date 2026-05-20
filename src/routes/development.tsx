@@ -3,6 +3,12 @@ import { useState } from "react";
 import { CheckCircle2, Clock, Hammer, IndianRupee, Calendar } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useLang } from "@/i18n";
+import img1 from "@/assets/WhatsApp Image 2026-05-20 at 12.13.48 PM.jpeg";
+import img2 from "@/assets/IMG_8506.JPG.jpeg";
+import img3 from "@/assets/IMG_3892.PNG";
+import img4 from "@/assets/IMG_6037.PNG";
+import img5 from "@/assets/IMG_6038.PNG";
+import img6 from "@/assets/IMG_6039.PNG";
 
 export const Route = createFileRoute("/development")({
   component: DevPage,
@@ -15,12 +21,12 @@ export const Route = createFileRoute("/development")({
 });
 
 const projects = [
-  { id: 1, title: "Saibaba Colony Road Resurfacing", cat: "Roads", status: "Completed", progress: 100, budget: "₹1.8 Cr", year: 2025 },
-  { id: 2, title: "Saravanampatti Drinking Water Phase-2", cat: "Water", status: "In Progress", progress: 65, budget: "₹4.2 Cr", year: 2025 },
-  { id: 3, title: "Smart Classrooms in 8 Govt Schools", cat: "Education", status: "Completed", progress: 100, budget: "₹95 L", year: 2024 },
-  { id: 4, title: "Storm Water Drains – Peelamedu", cat: "Drainage", status: "In Progress", progress: 40, budget: "₹2.3 Cr", year: 2025 },
-  { id: 5, title: "Solar Street Lights – 1,200 units", cat: "Infrastructure", status: "Completed", progress: 100, budget: "₹1.1 Cr", year: 2024 },
-  { id: 6, title: "Women Welfare Center – Ganapathy", cat: "Welfare", status: "Planned", progress: 10, budget: "₹70 L", year: 2026 },
+  { id: 1, title: "Saibaba Colony Road Resurfacing", cat: "Roads", status: "Completed", progress: 100, budget: "₹1.8 Cr", year: 2025, img: img1 },
+  { id: 2, title: "Saravanampatti Drinking Water Phase-2", cat: "Water", status: "In Progress", progress: 65, budget: "₹4.2 Cr", year: 2025, img: img2 },
+  { id: 3, title: "Smart Classrooms in 8 Govt Schools", cat: "Education", status: "Completed", progress: 100, budget: "₹95 L", year: 2024, img: img3 },
+  { id: 4, title: "Storm Water Drains – Peelamedu", cat: "Drainage", status: "In Progress", progress: 40, budget: "₹2.3 Cr", year: 2025, img: img4 },
+  { id: 5, title: "Solar Street Lights – 1,200 units", cat: "Infrastructure", status: "Completed", progress: 100, budget: "₹1.1 Cr", year: 2024, img: img5 },
+  { id: 6, title: "Women Welfare Center – Ganapathy", cat: "Welfare", status: "Planned", progress: 10, budget: "₹70 L", year: 2026, img: img6 },
 ];
 
 const statusStyle = {
@@ -59,8 +65,9 @@ function DevPage() {
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filtered.map((p) => (
             <article key={p.id} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
-              <div className="relative aspect-[16/9] bg-gradient-hero">
-                <span className={`absolute right-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${statusStyle[p.status as keyof typeof statusStyle]}`}>{p.status}</span>
+              <div className="relative aspect-[16/9] overflow-hidden bg-muted">
+                <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span className={`absolute right-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm shadow-sm ${statusStyle[p.status as keyof typeof statusStyle]}`}>{p.status}</span>
                 <div className="absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-full bg-tvk-black/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-widest text-tvk-gold backdrop-blur">
                   <Hammer className="h-3 w-3" /> {p.cat}
                 </div>

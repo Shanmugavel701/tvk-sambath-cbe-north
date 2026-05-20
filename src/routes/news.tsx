@@ -2,6 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useLang } from "@/i18n";
+import img1 from "@/assets/IMG_1600.JPG.jpeg";
+import img2 from "@/assets/IMG_1601.JPG.jpeg";
+import img3 from "@/assets/IMG_1602.JPG.jpeg";
+import img4 from "@/assets/IMG_1603.JPG.jpeg";
+import img5 from "@/assets/IMG_1604.JPG.jpeg";
+import img6 from "@/assets/IMG_1607.JPG.jpeg";
 
 export const Route = createFileRoute("/news")({
   component: NewsPage,
@@ -14,12 +20,12 @@ export const Route = createFileRoute("/news")({
 });
 
 const events = [
-  { id: 1, type: "Welfare Camp", date: "Dec 7, 2026", place: "Ward 12 Community Hall", title: "Free Medical & Eye Camp", desc: "Specialists from city hospitals. Free medicines and screening." },
-  { id: 2, type: "Public Meeting", date: "Dec 14, 2026", place: "Saravanampatti Grounds", title: "Townhall with MLA", desc: "Open Q&A with citizens on local issues and development plans." },
-  { id: 3, type: "Press Release", date: "Nov 28, 2026", place: "MLA Office", title: "New Road Project Approved", desc: "₹2.4 crore approved for ring road resurfacing in 4 wards." },
-  { id: 4, type: "Field Visit", date: "Nov 22, 2026", place: "Ganapathy", title: "Drainage Inspection", desc: "On-site review with PWD officials after citizen complaints." },
-  { id: 5, type: "Youth Event", date: "Nov 15, 2026", place: "Tatabad Community Hall", title: "Skill Development Workshop", desc: "Free workshop on digital skills for college students." },
-  { id: 6, type: "Cultural", date: "Nov 1, 2026", place: "Constituency-wide", title: "Tamil Nadu Day Celebrations", desc: "Cultural programs across all wards celebrating Tamil heritage." },
+  { id: 1, type: "Welfare Camp", date: "Dec 7, 2026", place: "Ward 12 Community Hall", title: "Free Medical & Eye Camp", desc: "Specialists from city hospitals. Free medicines and screening.", img: img1 },
+  { id: 2, type: "Public Meeting", date: "Dec 14, 2026", place: "Saravanampatti Grounds", title: "Townhall with MLA", desc: "Open Q&A with citizens on local issues and development plans.", img: img2 },
+  { id: 3, type: "Press Release", date: "Nov 28, 2026", place: "MLA Office", title: "New Road Project Approved", desc: "₹2.4 crore approved for ring road resurfacing in 4 wards.", img: img3 },
+  { id: 4, type: "Field Visit", date: "Nov 22, 2026", place: "Ganapathy", title: "Drainage Inspection", desc: "On-site review with PWD officials after citizen complaints.", img: img4 },
+  { id: 5, type: "Youth Event", date: "Nov 15, 2026", place: "Tatabad Community Hall", title: "Skill Development Workshop", desc: "Free workshop on digital skills for college students.", img: img5 },
+  { id: 6, type: "Cultural", date: "Nov 1, 2026", place: "Constituency-wide", title: "Tamil Nadu Day Celebrations", desc: "Cultural programs across all wards celebrating Tamil heritage.", img: img6 },
 ];
 
 const typeColors: Record<string, string> = {
@@ -49,8 +55,9 @@ function NewsPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {events.map((e) => (
             <article key={e.id} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
-              <div className="relative aspect-[16/10] bg-gradient-hero">
-                <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${typeColors[e.type] || ""}`}>{e.type}</span>
+              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                <img src={e.img} alt={e.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <span className={`absolute left-3 top-3 rounded-full px-3 py-1 text-[10px] font-bold uppercase tracking-widest backdrop-blur-sm shadow-sm ${typeColors[e.type] || ""}`}>{e.type}</span>
               </div>
               <div className="flex flex-1 flex-col p-5">
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">

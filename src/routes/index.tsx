@@ -2,7 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { FileText, Gift, CalendarCheck, Siren, HardHat, GraduationCap, ArrowRight, MessageCircle, Quote, CheckCircle2, Users, TrendingUp, MapPinned } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useLang } from "@/i18n";
-import heroImg from "@/assets/mla-hero.jpg";
+import heroImg from "@/assets/IMG_1623.JPG.jpeg";
+import feedImg1 from "@/assets/IMG_1605.JPG.jpeg";
+import feedImg2 from "@/assets/IMG_1606.JPG.jpeg";
+import feedImg3 from "@/assets/IMG_1608.JPG.jpeg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -135,14 +138,18 @@ function Index() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {[
-            { title: "Ward 12 Inspection", desc: "Site visit to inspect new drainage works near Saibaba Colony.", tag: "Field Visit" },
-            { title: "Free Eye Camp", desc: "300+ citizens screened in collaboration with Aravind Eye Hospital.", tag: "Welfare" },
-            { title: "Student Townhall", desc: "Direct dialogue with college students on career & skill development.", tag: "Engagement" },
+            { title: "Ward 12 Inspection", desc: "Site visit to inspect new drainage works near Saibaba Colony.", tag: "Field Visit", img: feedImg1 },
+            { title: "Free Eye Camp", desc: "300+ citizens screened in collaboration with Aravind Eye Hospital.", tag: "Welfare", img: feedImg2 },
+            { title: "Student Townhall", desc: "Direct dialogue with college students on career & skill development.", tag: "Engagement", img: feedImg3 },
           ].map((post, i) => (
-            <article key={i} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-              <div className="aspect-[16/10] bg-gradient-hero" />
-              <div className="p-5">
-                <div className="inline-flex rounded-full bg-tvk-red/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-tvk-red">{post.tag}</div>
+            <article key={i} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card flex flex-col">
+              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                <img src={post.img} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              </div>
+              <div className="p-5 flex-1 flex flex-col">
+                <div>
+                  <div className="inline-flex rounded-full bg-tvk-red/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-tvk-red">{post.tag}</div>
+                </div>
                 <h3 className="mt-3 font-display text-xl">{post.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{post.desc}</p>
               </div>

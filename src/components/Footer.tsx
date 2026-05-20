@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Youtube, Twitter, Phone, Mail, MapPin } from "lucide-react";
 import { useLang } from "@/i18n";
+import logoImg from "@/assets/TVK Logo.webp";
 
 export function Footer() {
   const { tr } = useLang();
@@ -9,8 +10,8 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-4 lg:px-8">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-lg bg-tvk-red text-tvk-gold">
-              <span className="font-display text-lg">TVK</span>
+            <div className="grid h-12 w-12 place-items-center rounded-lg bg-white overflow-hidden shadow-sm">
+              <img src={logoImg} alt="TVK Logo" className="h-full w-full object-contain p-1" />
             </div>
             <div>
               <div className="font-display text-lg">{tr("mla.name")}</div>

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { School, Hospital, Bus, Train, Building2, Landmark, TreePine, ShieldCheck, MapPin } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { useLang } from "@/i18n";
+import heroBg from "@/assets/IMG_1602.JPG.jpeg";
 
 export const Route = createFileRoute("/constituency")({
   component: ConstituencyPage,
@@ -35,13 +36,17 @@ function ConstituencyPage() {
 
   return (
     <Layout>
-      <section className="bg-gradient-hero py-14 text-white">
-        <div className="mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold">
+      <section className="relative bg-gradient-hero py-24 text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
+          <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-tvk-black via-transparent to-transparent" />
+        </div>
+        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
+          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold backdrop-blur-md">
             {tr("nav.constituency")}
           </div>
-          <h1 className="mt-5 font-display text-5xl">{tr("mla.constituency")}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">{tr("con.intro")}</p>
+          <h1 className="mt-5 font-display text-5xl drop-shadow-md">{tr("mla.constituency")}</h1>
+          <p className="mt-4 max-w-2xl text-lg text-white/90 drop-shadow-sm">{tr("con.intro")}</p>
         </div>
       </section>
 

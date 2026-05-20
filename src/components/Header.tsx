@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Menu, X, Languages } from "lucide-react";
 import { useLang } from "@/i18n";
 import { cn } from "@/lib/utils";
+import logoImg from "@/assets/TVK Logo.webp";
 
 const links = [
   { to: "/", key: "nav.home" },
@@ -23,8 +24,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
         <Link to="/" className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-lg bg-tvk-black text-tvk-gold">
-            <span className="font-display text-lg">TVK</span>
+          <div className="grid h-11 w-11 place-items-center rounded-lg bg-white overflow-hidden shadow-sm">
+            <img src={logoImg} alt="TVK Logo" className="h-full w-full object-contain p-1" />
           </div>
           <div className="leading-tight">
             <div className="font-display text-sm tracking-wide text-tvk-red">{tr("brand.party")}</div>
