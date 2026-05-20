@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { CheckCircle2, Clock, Hammer, IndianRupee, Calendar } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
 import { useLang } from "@/i18n";
 import img1 from "@/assets/WhatsApp Image 2026-05-20 at 12.13.48 PM.jpeg";
 import img2 from "@/assets/IMG_8506.JPG.jpeg";
@@ -43,15 +44,7 @@ function DevPage() {
 
   return (
     <Layout>
-      <section className="bg-gradient-hero py-14 text-white">
-        <div className="mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold">
-            {tr("nav.development")}
-          </div>
-          <h1 className="mt-5 font-display text-4xl sm:text-5xl">{tr("dev.title")}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">{tr("dev.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero badge={tr("nav.development")} title={tr("dev.title")} subtitle={tr("dev.subtitle")} />
 
       <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
         <div className="flex gap-2 overflow-x-auto pb-2">

@@ -33,6 +33,7 @@
   --color-tvk-red: var(--tvk-red);
   --color-tvk-gold: var(--tvk-gold);
   --color-whatsapp: var(--whatsapp);
+  --font-sans: var(--font-sans);
   --font-display: var(--font-display);
   --font-tamil: var(--font-tamil);
 }
@@ -66,8 +67,9 @@
   --input: oklch(0.93 0.01 60);
   --ring: oklch(0.55 0.22 27);
 
-  --font-display: "Anton", "Bebas Neue", system-ui, sans-serif;
-  --font-tamil: "Noto Sans Tamil", "Inter", system-ui, sans-serif;
+  --font-sans: "Poppins", "Noto Sans Tamil", system-ui, sans-serif;
+  --font-display: "Poppins", "Noto Sans Tamil", system-ui, sans-serif;
+  --font-tamil: "Poppins", "Noto Sans Tamil", system-ui, sans-serif;
 
   --gradient-hero: linear-gradient(135deg, oklch(0.15 0.01 20) 0%, oklch(0.25 0.12 27) 60%, oklch(0.55 0.22 27) 100%);
   --gradient-gold: linear-gradient(135deg, var(--tvk-gold), oklch(0.7 0.18 50));
@@ -77,16 +79,24 @@
 
 @layer base {
   * { border-color: var(--color-border); }
+  html {
+    font-family: var(--font-sans);
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-tamil);
+    font-family: inherit;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.01em; }
-  html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3, html[lang="ta"] h4 {
-    font-family: var(--font-tamil);
-    font-weight: 800;
+  h1, h2, h3, h4 {
+    font-family: inherit;
+    letter-spacing: 0.01em;
+  }
+  html[lang="ta"] h1,
+  html[lang="ta"] h2,
+  html[lang="ta"] h3,
+  html[lang="ta"] h4 {
+    font-weight: 700;
   }
 }
 

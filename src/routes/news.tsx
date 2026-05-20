@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Calendar, MapPin, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
 import { useLang } from "@/i18n";
 import img1 from "@/assets/IMG_1600.JPG.jpeg";
 import img2 from "@/assets/IMG_1601.JPG.jpeg";
@@ -41,15 +42,7 @@ function NewsPage() {
   const { tr } = useLang();
   return (
     <Layout>
-      <section className="bg-gradient-hero py-14 text-white">
-        <div className="mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold">
-            {tr("nav.news")}
-          </div>
-          <h1 className="mt-5 font-display text-4xl sm:text-5xl">{tr("news.title")}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/85">{tr("news.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero badge={tr("nav.news")} title={tr("news.title")} subtitle={tr("news.subtitle")} />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

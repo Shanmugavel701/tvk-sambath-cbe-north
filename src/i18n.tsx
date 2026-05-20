@@ -30,6 +30,7 @@ export const t: Dict = {
   "cta.connect": { en: "Connect with MLA", ta: "எம்.எல்.ஏ-வை தொடர்பு கொள்ளுங்கள்" },
   "cta.complaint": { en: "Submit Complaint", ta: "புகார் அளியுங்கள்" },
   "cta.whatsapp": { en: "WhatsApp Us", ta: "வாட்ஸ்அப் செய்யுங்கள்" },
+  "cta.joinTvk": { en: "Join TVK", ta: "தவக்கில் இணையுங்கள்" },
   "cta.track": { en: "Track Complaint", ta: "புகார் நிலையை அறிய" },
 
   // Quick access
@@ -64,7 +65,33 @@ export const t: Dict = {
     en: "V. Sampathkumar is a grassroots leader from Coimbatore North, dedicated to serving the people through transparent governance, youth empowerment, and sustainable development. A long-time community organizer, he champions the values of Tamizhaga Vettri Kazhagam — fairness, progress, and Tamil pride.",
     ta: "வே. சம்பத்குமார் கோயம்புத்தூர் வடக்கிலிருந்து ஒரு அடித்தள தலைவர். வெளிப்படையான ஆட்சி, இளைஞர் மேம்பாடு, நிலையான வளர்ச்சி ஆகியவற்றின் மூலம் மக்களுக்கு சேவை செய்வதில் அர்ப்பணிப்புடையவர். தமிழக வெற்றிக் கழகத்தின் நேர்மை, முன்னேற்றம், தமிழ் பெருமை ஆகிய மதிப்புகளுக்காக போராடுபவர்."
   },
+  "about.bio.imageAlt": { en: "V. Sampathkumar with TVK leader Vijay", ta: "தவகத் தலைவர் விஜயுடன் வே. சம்பத்குமார்" },
   "about.timeline.title": { en: "Political Journey", ta: "அரசியல் பயணம்" },
+  "about.journey.2005.title": { en: "Community Organizer", ta: "சமூக அமைப்பாளர்" },
+  "about.journey.2005.desc": {
+    en: "Began grassroots work across Coimbatore North — listening to ward needs, building volunteer networks, and championing local welfare.",
+    ta: "கோயம்புத்தூர் வடக்கு முழுவதும் அடித்தளப் பணி தொடங்கினார் — வார்டு தேவைகளைக் கேட்டல், தன்னார்வ வலையமைப்பு, உள்ளூர் நலன் போராட்டம்.",
+  },
+  "about.journey.2012.title": { en: "Local Welfare Council", ta: "உள்ளூர் நலன் மன்றம்" },
+  "about.journey.2012.desc": {
+    en: "Led ward-level welfare and drinking-water access drives, coordinating residents with local bodies for faster resolutions.",
+    ta: "வார்டு அளவிலான நலன் மற்றும் குடிநீர் திட்டங்களை வழிநடத்தி, மக்களை உள்ளூர் நிர்வாகங்களுடன் இணைத்தார்.",
+  },
+  "about.journey.2018.title": { en: "District Coordinator", ta: "மாவட்ட ஒருங்கிணைப்பாளர்" },
+  "about.journey.2018.desc": {
+    en: "Coordinated flood relief and rehabilitation across the district — mobilizing supplies, volunteers, and transparent aid distribution.",
+    ta: "மாவட்டம் முழுவதும் வெள்ள உதவி மற்றும் மறுவாழ்வை ஒருங்கிணைத்தார் — உதவிப் பொருட்கள், தன்னார்வலர்கள், வெளிப்படையான விநியோகம்.",
+  },
+  "about.journey.2024.title": { en: "Joined TVK", ta: "தவக-வில் இணைந்தார்" },
+  "about.journey.2024.desc": {
+    en: "Officially joined Tamilaga Vettri Kazhagam, aligning with its vision of people-first governance and Tamil Nadu's progress.",
+    ta: "தமிழக வெற்றிக் கழகத்தில் அதிகாரப்பூர்வமாக இணைந்தார் — மக்கள் முதன்மை ஆட்சி மற்றும் தமிழ்நாட்டின் முன்னேற்றம்.",
+  },
+  "about.journey.2026.title": { en: "MLA Candidate · Coimbatore North", ta: "எம்.எல்.ஏ வேட்பாளர் · கோயம்புத்தூர் வடக்கு" },
+  "about.journey.2026.desc": {
+    en: "Contesting Coimbatore North under the TVK banner — committed to transparent offices, rapid complaint resolution, and constituency-wide development.",
+    ta: "தவக கொடியின் கீழ் கோயம்புத்தூர் வடக்கில் போட்டியிடுகிறார் — வெளிப்படையான அலுவலகம், விரைவு புகார் தீர்வு, தொகுதி முழுவதும் மேம்பாடு.",
+  },
   "about.vision.title": { en: "Vision for the Constituency", ta: "தொகுதிக்கான பார்வை" },
 
   // Constituency

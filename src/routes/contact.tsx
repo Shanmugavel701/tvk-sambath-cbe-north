@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, Siren, Ambulance, ShieldAlert, Flame, Heart, Baby } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
 import { useLang } from "@/i18n";
-import heroBg from "@/assets/IMG_5030.JPG.jpeg";
 
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
@@ -38,19 +38,7 @@ function ContactPage() {
 
   return (
     <Layout>
-      <section className="relative bg-gradient-hero py-24 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-tvk-black via-transparent to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold backdrop-blur-md">
-            {tr("nav.contact")}
-          </div>
-          <h1 className="mt-5 font-display text-4xl sm:text-5xl drop-shadow-md">{tr("contact.title")}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90 drop-shadow-sm">{tr("contact.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero badge={tr("nav.contact")} title={tr("contact.title")} subtitle={tr("contact.subtitle")} />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-3 lg:px-8">
         <div className="space-y-4 lg:col-span-1">

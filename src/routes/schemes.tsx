@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Users, GraduationCap, Tractor, HeartPulse, Briefcase, Baby, Search, ExternalLink } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
 import { useLang } from "@/i18n";
-import heroBg from "@/assets/IMG_1622.JPG.jpeg";
 
 export const Route = createFileRoute("/schemes")({
   component: SchemesPage,
@@ -36,19 +36,7 @@ function SchemesPage() {
 
   return (
     <Layout>
-      <section className="relative bg-gradient-hero py-24 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-tvk-black via-transparent to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold backdrop-blur-md">
-            {tr("nav.schemes")}
-          </div>
-          <h1 className="mt-5 font-display text-4xl sm:text-5xl drop-shadow-md">{tr("sch.title")}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90 drop-shadow-sm">{tr("sch.subtitle")}</p>
-        </div>
-      </section>
+      <PageHero badge={tr("nav.schemes")} title={tr("sch.title")} subtitle={tr("sch.subtitle")} />
 
       <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">

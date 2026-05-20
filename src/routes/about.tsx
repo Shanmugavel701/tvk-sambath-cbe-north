@@ -1,29 +1,39 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, GraduationCap, Heart, Target, Users } from "lucide-react";
+import { GraduationCap, Heart, Target, Users } from "lucide-react";
 import { Layout } from "@/components/Layout";
+import { PageHero } from "@/components/PageHero";
+import { PoliticalJourneyTimeline } from "@/components/PoliticalJourneyTimeline";
 import { useLang } from "@/i18n";
-import heroBg from "@/assets/IMG_1609.JPG.jpeg";
+import img5030 from "@/assets/IMG_5030.JPG.jpeg";
+import img2005 from "@/assets/IMG_1605.JPG.jpeg";
+import img2012 from "@/assets/IMG_1606.JPG.jpeg";
+import img2018 from "@/assets/IMG_1607.JPG.jpeg";
+import img2024 from "@/assets/IMG_1623.JPG.jpeg";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
       { title: "About V. Sampathkumar · TVK MLA Coimbatore North" },
-      { name: "description", content: "Biography, political journey, achievements, and vision of TVK MLA candidate V. Sampathkumar for Coimbatore North." },
+      {
+        name: "description",
+        content:
+          "Biography, political journey, achievements, and vision of TVK MLA candidate V. Sampathkumar for Coimbatore North.",
+      },
     ],
   }),
 });
 
+const journeyMilestones = [
+  { year: "2005", titleKey: "about.journey.2005.title", descKey: "about.journey.2005.desc", image: img2005 },
+  { year: "2012", titleKey: "about.journey.2012.title", descKey: "about.journey.2012.desc", image: img2012 },
+  { year: "2018", titleKey: "about.journey.2018.title", descKey: "about.journey.2018.desc", image: img2018 },
+  { year: "2024", titleKey: "about.journey.2024.title", descKey: "about.journey.2024.desc", image: img2024 },
+  { year: "2026", titleKey: "about.journey.2026.title", descKey: "about.journey.2026.desc", image: img5030 },
+] as const;
+
 function AboutPage() {
   const { tr } = useLang();
-
-  const timeline = [
-    { year: "2005", title: "Community Organizer", desc: "Began grassroots work in Coimbatore neighborhoods." },
-    { year: "2012", title: "Local Welfare Council", desc: "Led ward-level welfare and water-access initiatives." },
-    { year: "2018", title: "District Coordinator", desc: "Coordinated relief operations during Coimbatore floods." },
-    { year: "2024", title: "Joined TVK", desc: "Officially joined Tamilaga Vettri Kazhagam." },
-    { year: "2026", title: "MLA Candidate", desc: "Contesting Coimbatore North under TVK banner." },
-  ];
 
   const visions = [
     { icon: Target, title: "Zero Pending Complaints", desc: "Every public grievance resolved with transparent tracking." },
@@ -34,57 +44,51 @@ function AboutPage() {
 
   return (
     <Layout>
-      <section className="relative bg-gradient-hero py-24 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-30">
-          <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-tvk-black via-transparent to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-4 text-center lg:px-8">
-          <div className="inline-flex rounded-full border border-tvk-gold/40 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-tvk-gold backdrop-blur-md">
-            {tr("nav.about")}
+      <PageHero
+        centered
+        badge={tr("nav.about")}
+        title={tr("mla.name")}
+        subtitle={`${tr("mla.title")} · ${tr("mla.constituency")}`}
+      />
+
+      <section className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          <div className="max-w-xl flex-1">
+            <h2 className="font-display text-3xl font-bold">{tr("about.bio.title")}</h2>
+            <div className="mt-2 h-1 w-16 rounded-full bg-tvk-red" />
+            <p className="mt-6 text-lg leading-relaxed text-foreground/80">{tr("about.bio.text")}</p>
           </div>
-          <h1 className="mt-5 font-display text-5xl sm:text-6xl drop-shadow-md">{tr("mla.name")}</h1>
-          <p className="mt-4 text-lg text-white/90 drop-shadow-sm">{tr("mla.title")} · {tr("mla.constituency")}</p>
+          <figure className="m-0 flex shrink-0 justify-center lg:justify-end">
+            <div className="overflow-hidden rounded-2xl border border-border shadow-elegant">
+              <img
+                src={img5030}
+                alt={tr("about.bio.imageAlt")}
+                width={190}
+                height={240}
+                className="block h-[200px] w-[165px] object-cover object-top sm:h-[215px] sm:w-[178px]"
+              />
+            </div>
+          </figure>
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 py-16 lg:px-8">
-        <h2 className="font-display text-3xl">{tr("about.bio.title")}</h2>
-        <div className="mt-2 h-1 w-16 rounded-full bg-tvk-red" />
-        <p className="mt-6 text-lg leading-relaxed text-foreground/80">{tr("about.bio.text")}</p>
-      </section>
-
-      <section className="bg-muted/50 py-16">
-        <div className="mx-auto max-w-4xl px-4 lg:px-8">
-          <h2 className="font-display text-3xl">{tr("about.timeline.title")}</h2>
-          <div className="mt-2 h-1 w-16 rounded-full bg-tvk-red" />
-          <div className="relative mt-10 space-y-8 border-l-2 border-tvk-red/30 pl-8">
-            {timeline.map((item) => (
-              <div key={item.year} className="relative">
-                <div className="absolute -left-[42px] grid h-8 w-8 place-items-center rounded-full bg-tvk-red text-xs font-bold text-white">
-                  <Award className="h-3.5 w-3.5" />
-                </div>
-                <div className="font-display text-tvk-red">{item.year}</div>
-                <div className="mt-1 text-xl font-semibold">{item.title}</div>
-                <p className="mt-1 text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PoliticalJourneyTimeline milestones={[...journeyMilestones]} />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <h2 className="font-display text-3xl">{tr("about.vision.title")}</h2>
+        <h2 className="font-display text-3xl font-bold">{tr("about.vision.title")}</h2>
         <div className="mt-2 h-1 w-16 rounded-full bg-tvk-red" />
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {visions.map((v) => {
             const Icon = v.icon;
             return (
-              <div key={v.title} className="rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant">
+              <div
+                key={v.title}
+                className="rounded-2xl border border-border bg-card p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant"
+              >
                 <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-gold text-tvk-black">
                   <Icon className="h-6 w-6" />
                 </div>
-                <h3 className="mt-4 font-display text-lg">{v.title}</h3>
+                <h3 className="mt-4 font-display text-lg font-semibold">{v.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{v.desc}</p>
               </div>
             );
